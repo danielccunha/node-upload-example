@@ -1,6 +1,6 @@
-import express from "express";
-import chalk from "chalk";
+import chalk from 'chalk'
+import express from 'express'
 
-const app = express();
+const app = express()
 
-app.listen(3333, () => console.log(`Successfully started server on port ${chalk.yellow("3333")}`));
+app.listen(3333, () => console.log(`Successfully started server on port ${chalk.yellow('3333')}`))
