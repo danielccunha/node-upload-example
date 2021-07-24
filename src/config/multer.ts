@@ -43,7 +43,7 @@ const storageTypes = {
 }
 
 export const config = {
-  ...storageTypes.s3,
+  ...storageTypes[process.env.STORAGE_TYPE],
   limits: {
     fileSize: 2 * 1024 * 1024
   },

@@ -17,3 +17,10 @@ routes.post('/posts', multer(config).single('file'), async (request, response) =
 
   return response.status(201).json(post)
 })
+
+routes.delete('/posts/:id', async (request, response) => {
+  const post = await Post.findById(request.params.id)
+  await post.remove()
+
+  return response.status(204).send()
+})

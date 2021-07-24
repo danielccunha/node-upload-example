@@ -1,12 +1,12 @@
 import mongoose, { Schema, Document } from 'mongoose'
 
-export interface PostAttr extends Document {
+export interface IPost extends Document {
   name: string
   size: number
   key: string
 }
 
-const PostSchema = new Schema({
+const PostSchema = new Schema<IPost>({
   name: {
     type: String,
     required: true,
@@ -31,4 +31,12 @@ const PostSchema = new Schema({
   }
 })
 
-export const Post = mongoose.model<PostAttr>('Post', PostSchema)
+PostSchema.pre<IPost>('save', function () {
+  // TODO: Assign development URL
+})
+
+PostSchema.pre<IPost>('remove', function () {
+  // TODO: Handle delete
+})
+
+export const Post = mongoose.model<IPost>('Post', PostSchema)
