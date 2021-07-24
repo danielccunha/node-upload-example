@@ -12,8 +12,8 @@ routes.get('/posts', async (_request, response) => {
 })
 
 routes.post('/posts', multer(config).single('file'), async (request, response) => {
-  const { originalname: name, size, filename: key } = request.file
-  const post = await Post.create({ name, size, key, url: '' })
+  const { originalname: name, size, key, location: url = '' } = request.file
+  const post = await Post.create({ name, size, key, url })
 
   return response.status(201).json(post)
 })

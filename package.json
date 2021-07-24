@@ -9,18 +9,22 @@
     "dev": "tsnd --quiet --respawn --transpile-only --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
+    "aws-sdk": "^2.953.0",
     "chalk": "^4.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.3",
     "morgan": "^1.10.0",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0"
   },
   "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
     "@types/express": "^4.17.13",
     "@types/mongoose": "^5.11.97",
     "@types/morgan": "^1.9.3",
     "@types/multer": "^1.4.7",
+    "@types/multer-s3": "^2.7.10",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.31.0",
