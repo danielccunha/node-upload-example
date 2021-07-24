@@ -17,6 +17,7 @@ const storageTypes = {
           }
 
           file.key = `${hash.toString('hex')}-${file.originalname.replace(' ', '_')}`
+          file.location = `${process.env.APP_URL}/files/${file.key}`
           callback(null, file.key)
         })
       }
@@ -42,7 +43,7 @@ const storageTypes = {
   }
 }
 
-export const config = {
+export const config: multer.Options = {
   ...storageTypes[process.env.STORAGE_TYPE],
   limits: {
     fileSize: 2 * 1024 * 1024

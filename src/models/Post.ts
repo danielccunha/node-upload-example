@@ -6,7 +6,7 @@ export interface IPost extends Document {
   key: string
 }
 
-const PostSchema = new Schema<IPost>({
+const PostSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -29,14 +29,6 @@ const PostSchema = new Schema<IPost>({
     type: Date,
     default: Date.now
   }
-})
-
-PostSchema.pre<IPost>('save', function () {
-  // TODO: Assign development URL
-})
-
-PostSchema.pre<IPost>('remove', function () {
-  // TODO: Handle delete
 })
 
 export const Post = mongoose.model<IPost>('Post', PostSchema)
