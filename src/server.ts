@@ -1,7 +1,9 @@
+import 'dotenv/config'
 import chalk from 'chalk'
 import express from 'express'
 import morgan from 'morgan'
 
+import './config/mongoose'
 import { routes } from './routes'
 
 const app = express()
